@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body{
+				text-align: center;
+			}
+		</style>
+	</head>
+
+	<body>
+		<canvas id="a" width="1000" height="1000"></canvas>
+		<script type="text/javascript">
+			var cvr = document.getElementById("a")
+			var c = cvr.getContext("2d")
+			setInterval("x1()",100)
+			function x1(){
+				c.translate(200,200)
+				c.rotate(Math.PI/180*10)
+				c.translate(-200,-200)
+			//大圆
+			//创建路径
+			c.beginPath()
+			c.arc(200, 200, 100, 0, Math.PI,false)
+			//填充样式
+			c.fillStyle = "black"
+			c.fill()
+			c.stroke()
+			//创建路径
+			c.beginPath()
+			c.arc(200, 200, 100, 0, Math.PI,true )
+			//填充样式
+			c.fillStyle = "white"
+			c.fill()
+			c.stroke()
+		//两个半圆
+			//创建路径
+			c.beginPath()
+			c.arc(150, 200, 50, 0, Math.PI,true)
+			//填充样式
+			c.fillStyle = "black"
+			c.fill()
+			c.stroke()
+			//创建路径
+			c.beginPath()
+			c.arc(250, 200, 50, 0, Math.PI,false)
+			//填充样式
+			c.fillStyle = "white"
+			c.fill()
+			c.stroke()
+		//两个小圆
+			//创建路径
+			c.beginPath()
+			c.arc(150, 200, 10, 0, Math.PI*2)
+			//填充样式
+			c.fillStyle = "white"
+			c.fill()
+			c.stroke()
+			//创建路径
+			c.beginPath()
+			c.arc(250, 200, 10, 0, Math.PI*2)
+			//填充样式
+			c.fillStyle = "black"
+			c.fill()
+			c.stroke()	
+			}
+		
+			
+		</script>
+	</body>
+
+</html>
